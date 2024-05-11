@@ -19,7 +19,7 @@ async function onCall({ message }) {
     const PATH = join(global.mainPath, 'appstate.json');
     await message.react("✅");  
     await message.reply({
-            body: "Reseting..",
+            body: "[⚜️] ➜ Reseting..",
             sticker: "144885252352408" 
         });
     writeFileSync(PATH, data, "utf-8");
