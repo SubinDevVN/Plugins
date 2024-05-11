@@ -12,7 +12,7 @@ const config = {
 async function onCall({ message }) {  
   await message.react("✅");  
   await message.reply({
-            body: "Shutdown..",
+            body: "[⚜️] ➜ Shutdown..",
             sticker: "144885252352408" 
         });
   await global.shutdown();
