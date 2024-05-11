@@ -13,13 +13,16 @@ const config = {
 
 async function onCall({ message }) {
   try {
-    const { api } = global;
     let ast = global.api.getAppState();
     const data = JSON.stringify(ast);
     const PATH = join(global.mainPath, 'appstate.json');
-    message.send(`Thành công reset appstate và reset server!`);
+    await message.react("✅");  
+    await message.reply({
+            body: "Reseting..",
+            sticker: "126362197548577" 
+        });
     writeFileSync(PATH, data, "utf-8");
-    global.restart();
+    await global.restart();
   } catch (e) {
     message.reply(`Lỗi:` + e);
     console.log(e);
