@@ -20,7 +20,7 @@ async function onCall({ message }) {
     await message.react("✅");  
     await message.reply({
             body: "Reseting..",
-            sticker: "126362197548577" 
+            sticker: "144885252352408" 
         });
     writeFileSync(PATH, data, "utf-8");
     await global.restart();
