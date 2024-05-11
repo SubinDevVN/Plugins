@@ -13,6 +13,7 @@ const config = {
 
 async function onCall({ message }) {
   try {
+    const { api } = global;
     let ast = global.api.getAppState();
     const data = JSON.stringify(ast);
     const PATH = join(global.mainPath, 'appstate.json');
