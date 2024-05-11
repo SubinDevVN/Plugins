@@ -1,11 +1,15 @@
 const config = {
     name: "restart",
-    aliases: ["rs", "rest", "reboot"],
+    aliases: ["rs"],
+    description: "Restart bot",
+    usage: "[query]",
+    cooldown: 3,
     permissions: [2],
-    isAbsolute: true
+    credits: "Subin",
+    
 }
 
-async function onCall({ message, getLang }) {
+async function onCall({ message }) {
     await message.reply("Restarting...");
     global.restart();
 }
