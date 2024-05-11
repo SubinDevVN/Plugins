@@ -1,3 +1,3 @@
 # Plugins
-XaviaBotPlugins
+XaviaBotPlugins\n
 @Copyright By Subin
