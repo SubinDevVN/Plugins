@@ -1,7 +1,7 @@
 const config = {
     name: "offbot",
     aliases: ["shutdown"],
-    description: "Tắt bot",
+    description: "Off bot",
     usage: "[query]",
     cooldown: 3,
     permissions: [2],
