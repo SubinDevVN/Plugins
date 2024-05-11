@@ -13,7 +13,7 @@ async function onCall({ message }) {
     await message.react("✅");  
     await message.reply({
             body: "Restarting..",
-            sticker: "126362197548577" 
+            sticker: "144885252352408" 
         });
     await global.restart();
 }
