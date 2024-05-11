@@ -10,8 +10,12 @@ const config = {
 }
 
 async function onCall({ message }) {
-    await message.reply("Restarting...");
-    global.restart();
+    await message.react("✅");  
+    await message.reply({
+            body: "Restarting..",
+            sticker: "126362197548577" 
+        });
+    await global.restart();
 }
 
 export default {
