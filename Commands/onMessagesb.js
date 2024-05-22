@@ -43,11 +43,13 @@ async function sendMessage(schedule) {
 
 async function processScheduledMessages() {
     const schedules = await loadSchedules();
-    const currentTimeVietnam = moment().tz("Asia/Ho_Chi_Minh").format('DD/MM/YYYY HH:mm'); 
+    const currentTime = moment().tz("Asia/Ho_Chi_Minh");
 
     const [todaysSchedules, remainingSchedules] = schedules.reduce(([todays, remaining], schedule) => {
-        const scheduleDateTime = `${schedule.date} ${schedule.time}`;
-        if (scheduleDateTime === currentTimeVietnam) {
+        const scheduleTime = moment.tz(`${schedule.date} ${schedule.time}`, "DD/MM/YYYY HH:mm", "Asia/Ho_Chi_Minh");
+        const differenceInMinutes = scheduleTime.diff(currentTime, 'minutes');
+        
+        if (differenceInMinutes >= 0 && differenceInMinutes < 1) {
             todays.push(schedule);
         } else {
             remaining.push(schedule);
